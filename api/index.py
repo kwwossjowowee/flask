@@ -9,6 +9,7 @@ def home():
   data = request.get_json()
   try:
     message = data["message"]
+    message["text"]
     chat = message["chat"]
     from_user = message["from"]
   except:
