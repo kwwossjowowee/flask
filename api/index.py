@@ -10,7 +10,7 @@ def home():
   metin = None
   try:
     message = data["message"]
-    metin = message["text"] if message["text"] else message["caption"]
+    metin = message["text"] if message.get("text") else message["caption"]
     chat = message["chat"]
     from_user = message["from"]
   except:
