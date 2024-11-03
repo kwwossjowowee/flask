@@ -18,7 +18,7 @@ def home():
   if metin == "/start": 
     requests.get(f"{api}/sendMessage", data={"chat_id": chat["id"], "text": "Welcome:)"})
   else:
-    translated = GoogleTranslator(source='auto', target=from_user["language_code"]).translate(metin)
     requests.get(f"{api}/sendChatAction", data={"chat_id": chat["id"], "action": "typing"})
+    translated = GoogleTranslator(source='auto', target=from_user["language_code"]).translate(metin)
     requests.get(f"{api}/sendMessage", data={"chat_id": chat["id"], "text": translated})
   return "True"
